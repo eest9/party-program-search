@@ -4,25 +4,117 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Programmsuche</title>
+        <title>Landtagswahl Steiermark 2015: Programmsuche</title>
 
-        <link rel="stylesheet" href="./css/normalize.css">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/style.css">
+
+        <script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript">
+            var programData = [
+                {
+                    id: 'spoe',
+                    name: 'Sozialdemokratische Partei Österreichs (SPÖ)',
+                    filePath: 'text/spoe.md',
+                    url: 'http://steiermark.spoe.at/cms_files/siteadmin/Downloads/Impuls-Plan_Folder_A5_quer.pdf',
+                    text: ''
+                },
+                {
+                    id: 'oevp',
+                    name: 'Österreichischen Volkspartei (ÖVP)',
+                    filePath: 'text/oevp.md',
+                    url: 'http://www.stvp.at/files/2013/01/Wege_f%C3%BCr_die_Steiermark.pdf',
+                    text: ''
+                },
+                {
+                    id: 'fpoe',
+                    name: 'Freiheitliche Partei Österreichs (FPÖ)',
+                    filePath: 'text/fpoe.md',
+                    url: 'http://www.fpoe-stmk.at/landtagswahl/wahlprogramm/',
+                    text: ''
+                },
+                {
+                    id: 'gruene',
+                    name: 'Die Grünen – Die Grüne Alternative (GRÜNE)',
+                    filePath: 'text/gruene.md',
+                    url: 'http://www.stmk.gruene.at/lt-wahl-2015/das-gruene-regionenprogramm-2015.pdf',
+                    text: ''
+                },
+                {
+                    id: 'kpoe',
+                    name: 'Kommunistische Partei Österreichs (KPÖ)',
+                    filePath: 'text/kpoe.md',
+                    url: 'http://www.kpoe-steiermark.at/download.php?f=fe67889a7c76ac56bcbee517a86afe14',
+                    text: ''
+                },
+                {
+                    id: 'neos',
+                    name: 'NEOS - Das neue Österreich (NEOS)',
+                    filePath: 'text/neos.md',
+                    url: 'https://steiermark.neos.eu/wp-content/uploads/sites/11/2015/05/NEOS_Programm_Landtagswahl15.pdf',
+                    text: ''
+                },
+                {
+                    id: 'ts',
+                    name: 'Team Stronach (TS)',
+                    filePath: 'text/ts.md',
+                    url: '',
+                    text: ''
+                },
+                {
+                    id: 'pirat',
+                    name: 'Piratenpartei Österreichs (PIRAT)',
+                    filePath: 'text/pirat.md',
+                    url: 'https://wiki.piratenpartei.at/wiki/Landesorganisation_Steiermark/Programm',
+                    text: ''
+                }
+            ];
+        </script>
+        <script type="text/javascript" src="../js/script.js"></script>
     </head>
     <body>
         <div class="container">
             <header>
-                <h1><a href="./">Programmsuche</a></h1>
+                <h1><a href="./">Gemeinderatswahl Wien 2015: Programmsuche</a></h1>
                 <p>
-                    Mit dieser Webseite können die Wahlprogramme von Parteien durchsucht werden. Dabei werden nur Programme berücksichstigt die sich direkt auf die Region oder das entsprechende Gebiet der jeweiligen Wahl beziehen und nicht nur auf übergeordnete Ebene bzw. allgemeine Programme oder Positionspapiere. Der Sourcecode befindet sich auf <a href="https://github.com/PeterTheOne/grw-klagenfurt-program-search">Github.com</a>, ich freue mich über Pullrequests und Änderungsvorschläge. - <a href="https://twitter.com/petertheone">@PeterTheOne</a>
+                   Mit dieser Webseite können die Wahlprogramme von Parteien durchsucht werden. Dabei werden nur Programme berücksichstigt die sich direkt auf die Region oder das entsprechende Gebiet der jeweiligen Wahl beziehen und nicht nur auf übergeordnete Ebene bzw. allgemeine Programme oder Positionspapiere. Der Sourcecode befindet sich auf <a href="https://github.com/PeterTheOne/grw-klagenfurt-program-search">Github.com</a>, ich freue mich über Pullrequests und Änderungsvorschläge. - <a href="https://twitter.com/petertheone">@PeterTheOne</a>               
                 </p>
             </header>
             <nav>
-                <ul>
-                    <li><a href="grw-klagenfurt-2015/">Gemeinderatswahl Klagenfurt 2015</a></li>
-                    <li><a href="ltw-steiermark-2015/">Landtagswahl Steiermark 2015</a></li>
-                    <!--<li><a href="ltw-wien-2015/">Landtagswahl Wien 2015</a></li>-->
-                </ul>
+                <form>
+                    <input name="search" size="50" type="text" placeholder="Geben sie hier ein Suchwort ein.." />
+                </form>
+                <div id="suggestions">
+                    Vorschläge:
+                    <ul>
+                        <li><a href="#">Zusammenlegung</a></li>
+                        <li><a href="#">Verkehr</a></li>
+                        <li><a href="#">Wirtschaft</a></li>
+                        <li><a href="#">Jugend</a></li>
+                        <li><a href="#">Arbeit</a></li>
+                        <li><a href="#">Transparenz</a></li>
+                        <li><a href="#">Kultur</a></li>
+                        <li><a href="#">Bürgerbeteiligung</a></li>
+                        <li><a href="#">Wlan</a></li>
+                        <li><a href="#">Tourismus</a></li>
+                        <li><a href="#">Schule</a></li>
+                        <li><a href="#">Schulden</a></li>
+                        <li><a href="#">Verantwortung</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Rechte</a></li>
+                        <li><a href="#">Pflichten</a></li>
+                        <li><a href="#">Graz</a></li>
+                        <li><a href="#">Innenstadt</a></li>
+                        <li><a href="#">Infrastruktur</a></li>
+                        <li><a href="#">Busse</a></li>
+                        <li><a href="#">GVB</a></li>
+                        <li><a href="#">Gemeinderat</a></li>
+                        <li><a href="#">Zukunft</a></li>
+                    </ul>
+                </div>
+                <p id="statistics">
+
+                </p>
             </nav>
             <article>
                 <div id="results">
